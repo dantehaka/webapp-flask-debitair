@@ -1,0 +1,44 @@
+.btn-primary {
+    background-color: #0768f9;
+    padding: 0;
+    padding: 15px 30px 15px 30px;
+    font-size: 16px bold;
+}
+
+.btn-primary:hover {
+    background-color: #0303cc;
+}
+
+.btn-success {
+    background-color: #0303cc;
+}
+
+#home{
+    font-family: 'Poppins', 'bold';
+    font-weight: 500px;
+}
+
+.btn-secondary {
+    background-color: #c7c8c9;
+    padding: 0;
+    padding: 10px 20px 10px 20px;
+    font-size: 20px bold;
+}
+
+.person-img img{
+    height: 250px;
+    /* width; */
+}
+
+.form-label {
+    font-family: 'Poppins', 'bold';
+    font-size: 20px bold;
+}
+
+.label {
+    border-top: 4px;
+}
+
+a {
+    font-family: 'Poppins', 'Semi-bold';
+}

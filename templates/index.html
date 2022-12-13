@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team 2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar py-4 navbar-expand-lg bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src={{ url_for('static', filename="images/logo.png" ) }} width="30">
+                AKARTA
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item active align-self-center">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item align-self-center">
+                        <a class="nav-link" href="#predict">Predict</a>
+                    </li>
+                    <li class="nav-item align-self-cente">
+                        <a class="nav-link" href="#team">Team</a>
+                    </li>
+                    <li class="nav-item align-self-cente">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col align-self-center">
+                    <h1 class="mb-4">
+                        Jakarta Water Discharge Prediction (J-WDiction)
+                    </h1>
+                    <p class="mb-4">
+                        Suatu Sistem Prediksi debit air daerah Jakarta secara akurat menggunakan Algoritma LSTM
+                    </p>
+                    <a class="btn btn-primary" href="#team" role="button">Team 2</a>
+                </div>
+                    <div class="col">
+                        <img src={{ url_for('static', filename="images/home.jpg" ) }} width="600px">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="predict">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center py-3">
+                <h1>Prediction</h1>
+            <div>
+                <img src={{ url_for('static', filename="images/kampus-merdeka.png" )}} height="50" width="auto">
+            </div>
+        </div>
+    </div>
+</section>
+
+    <div class="container">
+          <div class="row gx-5">
+            <div class="p-5 col-8 card">
+              <form action="/predict" method="post">
+                <!-- Input Lama Bekerja (Tahun) -->
+                <div class="mb-3">
+                  <label for="onehour" class="form-label">Jam Pertama</label>
+                  <input type="number" name="onehour" class="form-control" id="lama_bekerja" required>
+                </div>
+                <!-- End of Input Lama Bekerja (Tahun) -->
+    
+                <!-- Input Jam Kerja Perbulan -->
+                <div class="mb-3">
+                  <label for="twohour" class="form-label">Jam Kedua</label>
+                  <input type="number" name="twohour" class="form-control" id="jam_kerja_perbulan" required>
+                </div>
+                <!-- End of Input Jam Kerja Perbulan -->
+    
+                <div class="mb-3">
+                  <label for="threehour" class="form-label">Jam Ketiga</label>
+                  <input type="number" name="threehour" class="form-control" id="jam_kerja_perbulan" required>
+                </div>
+                
+                <!-- Button Submit -->
+                <div class="d-flex justify-content-end mt-5">
+                  <button type="submit" class="btn btn-success" style="background-color: #0768f9;">Prediksi</button>
+                </div>
+                <!-- End of Button Submit -->
+              </form>
+            </div>
+    
+            <div class="col-4 pt-5 px-2 card gx-3" style="background-color: rgb(231, 231, 231)">
+              <h3 class="text-center">Hasil Prediksi</h2> 
+                <p class="text-center">Prediksi Debit Air di Jakarta berdasarkan 3 jam sebelumnya adalah <span class="fw-bold">{{prediction_result.flat[0]}} m<sup>3</sup></span></p>
+            </div>
+          </div>
+      </div>
+
+    <section id="team">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-black text-center my-5">Meet Our Team</h2>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm3 card-group">
+                    <div class="shadow d-flex justify-content-center align-items-center p-3
+                    bg-light rounded-lg flex-column">
+                    <div class="person-img">
+                        <img src={{ url_for('static', filename="images/NFT.jpg" ) }} class="img-fluid rounded-circle" alt="0">
+                    </div>
+                    <div class="person-name my-2">
+                        <h4 class="text-black">Naufal</h4>
+                    </div>
+                    <div class="info">
+                        <h6 class="text-black">Universitas Dian Sastro</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, nobis.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm3 card-group">
+                <div class="shadow d-flex justify-content-center align-items-center p-3
+                bg-light rounded-lg flex-column">
+                <div class="person-img">
+                    <img src={{ url_for('static', filename="images/NFT.jpg" ) }} class="img-fluid rounded-circle" alt="0">
+                </div>
+                <div class="person-name my-2">
+                    <h4 class="text-black">Jeremy</h4>
+                </div>
+                <div class="info">
+                    <h6 class="text-black">Universitas Esa Unggul</h6>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error, magnam?</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm3 card-group">
+            <div class="shadow d-flex justify-content-center align-items-center p-3
+            bg-light rounded-lg flex-column">
+            <div class="person-img">
+                <img src={{ url_for('static', filename="images/NFT.jpg" ) }} class="img-fluid rounded-circle" alt="0">
+            </div>
+            <div class="person-name my-2">
+                <h4 class="text-black">Dante</h4>
+            </div>
+            <div class="info">
+                <h6 class="text-black">Universitas HAHO</h6>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, ducimus?</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm3 card-group">
+        <div class="shadow d-flex justify-content-center align-items-center p-3
+        bg-light rounded-lg flex-column">
+        <div class="person-img">
+            <img src={{ url_for('static', filename="images/NFT.jpg" ) }} class="img-fluid rounded-circle" alt="0">
+        </div>
+        <div class="person-name my-2">
+            <h3 class="text-black">Fandy</h3>
+        </div>
+        <div class="info">
+            <h6 class="text-black">Universitas HAHA HIHI</h6>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, sunt!</p>
+        </div>
+    </div>
+</div>
+            
+        </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col align-self-center">
+                        <h1 class="mb-4">
+                            CONTACT US
+                        </h1>
+                        <p class="mb-4">
+                            <!-- Suatu Sistem Prediksi debit air daerah Jakarta secara akurat menggunakan Algoritma LSTM -->
+                        </p>
+                        <a class="btn btn-primary" href="#team" role="button">Team 2</a>
+                    </div>
+                        <div class="col">
+                            <img src={{ url_for('static', filename="images/contact-rb.png" ) }} width="500px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        
+        
+    <script type="text/javascript" src="{{ url_for('static',filename='script/bootstrap.js') }}"></script>
+        
+</body>
+</html>
